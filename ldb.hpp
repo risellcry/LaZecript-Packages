@@ -21,22 +21,6 @@ class ldb
         {
             return line.compare(0, find.length(), find) == 0;
         }
-        vector<string> split(string line, string delimiter)
-        {
-            vector<string> tokens;
-            string token;
-            size_t start = 0;
-            size_t end;
-            size_t len = delimiter.length();
-            while ((end = line.find(delimiter, start)) != string::npos)
-            {
-                token = line.substr(start, end - start);
-                start = end + len;
-                tokens.push_back(token);
-            }
-            tokens.push_back(line.substr(start));
-            return tokens;
-        }
     public:
         void init(string file)
         {
